@@ -1,8 +1,13 @@
 application: slack-integration
-version: 1
+version: 2
 runtime: php
 api_version: 1
 
 handlers:
+- url: /(.*cron\.php)$
+  script: scripts/\1
+  login: admin
+  auth_fail_action: unauthorized
+
 - url: /(.*\.php)$
   script: scripts/\1

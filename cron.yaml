@@ -1,0 +1,4 @@
+cron:
+- description: Poll Rally for events to publicize
+  url: /rallycron.php
+  schedule: every 1 minutes
