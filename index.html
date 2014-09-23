@@ -19,8 +19,8 @@ title: Using Rallybot
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
 
-    {% capture readme_text %}{% include README.md %}{% endcapture %}
-    {{ readme_text | markdownify }}
+    {% capture main_text %}{% include rallybot-workflow.md %}{% endcapture %}
+    {{ main_text | markdownify }}
 
   </section>
 </div>
