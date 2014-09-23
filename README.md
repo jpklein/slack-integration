@@ -1,3 +1,8 @@
+---
+layout: post
+title: Rallybot Workflow
+---
+
 slack-integration
 =================
 
