@@ -8,19 +8,27 @@ Rally is a fine platform, but by all accounts its notification system is severly
 
 ### How do I use it?
 
-Once it is [installed](https://github.com/jpklein/slack-integration#installation), the bot polls your Rally project for changes and posts notifications to a channel in Slack. Notifications are sent whenever:
+Once it's [installed](https://github.com/jpklein/slack-integration#installation), the bot polls your Rally project for changes and posts notifications to a channel in Slack. Notifications are sent whenever:
 
 1. a comment is added to a ticket
 2. a new defect, user story, or test case is created
 3. a user story changes state
  
-While the first two events correlate directly to a specific action in Rally, rallybot's notion of states doesn't map as neatly to a single field so that it can better represent the flow of stories between different actors involved in agile software projects.
+While the first two events correlate directly to a specific action in Rally, the bot uses a combination of Rally's _state_ and _ready_ fields to better represent the flow of stories between the different actors involved in agile software projects.
 
 #### Tracking story completion
 
-Once a user story has been accepted as part of an iteration in Rally, the bot uses a combination of Rally's _state_ and _ready_ fields to track the progress of user stories.  
+A common question that arises when software teams first use Rally is: "how do I know when a story is ready to be tested?" Rally provides 5 states for a user story (Undefined, Defined, In-Progress, Completed, and Accepted) but these don't map neatly to the stages of development that a piece of software must undergo to reach acceptance. Rallybot alleviates this confusion by notifying team members when a handoff has occured, either: from a developer to a test engineer (or vice-versa), or from a test engineer to the product owner.
 
-When a story's state is set to "In-Progress" and the ready field is checked, rallybot will announce that the story is ready for testing.
+##### Developers
+
+Once a user story has been accepted as part of an iteration and you have added tasks to it, Rally should set the story's state to In-Progress and its ready flag should be unchecked.
+
+When you have finished writing the code described by the user story and when that code is in a place to that it can be tested (ie. on a QA environment rather than your localhost), simply *check the ready flag* on the user story in Rally.  This will trigger an announcement that the story is "ready for QA" and post a link in our Slack channel.
+
+As a result of their testing, QA may return the story to you with defects. The user story ticket should be in the same state as when you first started working on it (ie. In-Progress with the ready flag unchecked). After you've corrected those defects, closed their associated tickets, and deployed the fix to a QA environment, be sure to check the user story's ready flag once more to tell the team that it is ready for review.
+
+##### QA Team
 
 When the QA team has completed testing, they may either: 1) uncheck the ready flag to have rallybot announce that the story needs work, or 2) set the story to "Completed" to notify the Product Owner that it is ready for acceptance.
 
