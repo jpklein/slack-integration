@@ -8,11 +8,13 @@ Rally is a fine platform, but by all accounts its notification system is severly
 
 ### How do I use it?
 
-Pushes notifications from Rally and allows users to fetch ticket details. Notifications are sent whenever:
+Once it is [installed](https://github.com/jpklein/slack-integration#installation), the bot polls your Rally project for changes and posts notifications to a channel in Slack. Notifications are sent whenever:
 
 1. a comment is added to a ticket
 2. a new defect, user story, or test case is created
 3. a user story changes state
+ 
+While the first two events correlate directly to a specific action in Rally, rallybot's notion of states doesn't map as neatly to a single field so that it can better represent the flow of stories between different actors involved in agile software projects.
 
 #### Tracking story completion
 
