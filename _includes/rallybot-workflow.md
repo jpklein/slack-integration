@@ -18,7 +18,7 @@ While the first two events correlate directly to a specific action in Rally, the
 
 #### Tracking story completion
 
-A common question that arises when software teams first use Rally is: "how do I know when a story is ready for testing?" Rally provides 5 states for a user story - Undefined, Defined, In-Progress, Completed, and Accepted - but these don't map neatly to the different stages that a piece of software must undergo to reach acceptance. Rallybot alleviates this confusion by notifying team members whenever a handoff occurs, either: from a developer to a test engineer (or vice-versa), or from a test engineer to the product owner.
+A common question that arises when software teams first use Rally is: "how do I know when a story is ready for testing?" Rally provides five states for a user story - Undefined, Defined, In-Progress, Completed, and Accepted - but these don't map neatly to the different stages that a piece of software must undergo to reach acceptance. Rallybot alleviates this confusion by notifying team members whenever a handoff occurs, either: from a developer to a test engineer (or vice-versa), or from a test engineer to the product owner.
 
 ##### Developers
 
