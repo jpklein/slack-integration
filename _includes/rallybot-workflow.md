@@ -28,13 +28,13 @@ If QA finds any defects, they will use rallybot to post an announcement that the
 
 ##### QA Team
 
-When a user story is added to an iteration, create at least one child task to account for the time you'll spend testing it. Rally has a nasty habit of changing a story's state to Completed when all of its tasks have zero hours left to do, so maintaining these QA tasks is essential to having rallybot report the correct status.
+When a user story is added to an iteration, create at least one child task to account for the time you'll spend testing it. Rally has a nasty habit of changing a story's state to Completed when all of its tasks are completed, so maintaining these QA tasks is essential to having rallybot report the correct status.
 
 Once a developer has finished work on a story and deployed it to a test environment, rallybot will post a message in our Slack channel that it is "ready for QA". That's your cue to begin your testing and/or add any questions you have to the story's discussion tab; Rallybot will automatically repost your comments to Slack for everyone to see. You can even include other team members' Slack login names in your comments to notify them directly.
 
-If a story doesn't pass testing, create tickets for any defects you find and make sure to task out the hours you think you'll spend retesting the feature. After this is done, **uncheck the ready flag** of the user story in Rally. Rallybot wiil post a message to Slack that the story "needs work" and a developer should begin working on the fix. Look for another "ready for QA" announcement in Slack for the story to be retested.
+If a story doesn't pass testing, create tickets for any defects you find and make sure to task out the hours you think you'll spend retesting the feature. After this is done, **uncheck the ready flag** of the user story in Rally. Rallybot wiil post a message to Slack that the story "needs work" and a developer should begin addressing its defects. Look for another "ready for QA" announcement in Slack for the story to be retested.
 
-When a story passes testing - or all of its defects have been closed - **set the state to Completed**. This will trigger a notification that the story is "ready for acceptance" that should catch the attention of our product owner. You can do this either by manually changing the story's state field, or by setting the to do field of all its child tasks to zero (as mentioned above).
+When a story passes testing - or all of its defects have been closed - **set the state to Completed**. You can do this either by manually changing its state field, or by setting the state of all its child tasks to Completed (as mentioned above).
 
 ##### Product Owner
 
